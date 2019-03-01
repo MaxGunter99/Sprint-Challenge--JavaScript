@@ -184,7 +184,13 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
+// const animalNames = [];
+// console.log(animalNames);
+
 const animalNames = [];
+for (let i = 0; i < zooAnimals.length; i++) {
+  animalNames.push(zooAnimals[i].animal_name + ' '+ zooAnimals[i].scientific_name);
+};
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -193,15 +199,29 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
-console.log(lowerCase); 
+// const lowerCase = [];
+// console.log(lowerCase); 
+
+const lowerCase= [];
+for (let i = 0; i < zooAnimals.length; i++) {
+  console.log(zooAnimals[i].lowerCase.toString().toLowerCase());
+  
+};
 
 /* Request 3: .filter() 
 
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
+// const largerPopulation = [];
+// console.log(largerPopulation);
+
+let largerPopulation = [];
+for (let i = 0; i < zooAnimals.length; i++) {
+  if(zooAnimals[i].population <= 5){
+        largerPopulation.push(zooAnimals[i]);
+    }
+}
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -209,9 +229,13 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+// const populationTotal = 0;
+// console.log(populationTotal);
+let populationTotal = 0;
+  for (let i = 0; i < zooAnimals.length; i++) {
+  populationTotal += zooAnimals[i].population;
+}
 console.log(populationTotal);
-
 
 /* 
 
