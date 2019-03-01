@@ -38,7 +38,10 @@ A function is a container, it has a list of methods inside of it which can be in
 A closure could be labled as function, or using class. It has a bunch of methods inside of it.
 
 4. Describe the four rules of the 'this' keyword.
-
+- .this needs to be in refference to the object properties you are using.
+- .this must be used in a constructor or else it wont instantiate.
+- .this all by itself will reference the entire window
+- .this binds to context
 
 5. Why do we need super() in an extended class?
 Super gives the inheritance chain access to its functions.kind of like call does.

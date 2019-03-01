@@ -20,6 +20,27 @@
 // consume(10,16,multiply); // 160
 // consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
+function consume(param1, param2, callbackFunction) {
+  return callbackFunction(param1,param2);
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function greeting(firstName, lastName) {
+  return `Hello ${firstName} ${lastName}, nice to meet you!`;
+}
+
+
+console.log(consume(2,4,add));
+console.log(consume(10,16,multiply));
+console.log(consume("Marry","Poppins", greeting));
+
 
 // ==== Closures ==== 
 
@@ -27,6 +48,7 @@
 
 // Explanation: 
 
+//The function nested function had access to whats inside of it, it can console.log(internal) because it has access to it. internal doesnt have access to external, it doesnt work that way.
 
 const external = "I'm outside the function";
 

@@ -6,6 +6,81 @@
   object name, diet, weight, length, period
 */
 
+class Dino {
+  constructor (rawr) {
+    this.diet = rawr.diet;
+    this.weight = rawr.weight;
+    this.length = rawr.length;
+    this.period = rawr.period;
+    this.rawr = rawr.rawr;
+  }
+  tyrannosaurusWeight() {
+    return `${this.weight}`;
+  }
+  stegosaurusLength() {
+    return `${this.length}`;
+  }
+  velociraptorDiet() {
+    return `${this.diet}`;
+  }
+    tyrannosaurusPeriod() {
+    return `${this.period}`;
+  }
+    tyrannosaurusRawr() {
+    return `${this.rawr}`;
+  }
+  
+}
+
+const tyrannosaurus = new Dino ({
+  diet: 'carnivorous',
+  weight: '7000kg',
+  length: '12m',
+  period: 'Late Cretaceious',
+  rawr: 'RAWERSRARARWERSARARARRRR!'
+});
+
+const stegosaurus = new Dino ({
+  diet: 'herbivorous',
+  weight: '2000kg',
+  length: '9m',
+  period: 'Late Jurassic'
+});
+
+const  velociraptor = new Dino ({
+  diet: 'carnivorous',
+  weight: '15kg',
+  length: '1.8m',
+  period: 'Late Cretaceious'
+});
+
+// stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
+
+// velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceious
+
+// Using your dinosaur objects, log answers to these questions:
+
+// How much did tyrannosaurus weigh?
+console.log('The weight of a Tyrannosaurus:');
+console.log(tyrannosaurus.tyrannosaurusWeight());
+
+// What was the diet of a velociraptor?
+console.log('The diet of a Velociraptor:');
+console.log(velociraptor.velociraptorDiet());
+
+// How long was a stegosaurus?
+console.log('The Stegosaurus length is:');
+console.log(stegosaurus.stegosaurusLength());
+
+// What time period did tyrannosaurus live in?
+console.log('The Tyrannosaurus lived in the time period of:');
+console.log(tyrannosaurus.tyrannosaurusPeriod());
+
+
+// Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
+console.log('Mr. Tyrannosaurus:');
+console.log(tyrannosaurus.tyrannosaurusRawr());
+
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceious
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
@@ -15,20 +90,20 @@
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+// console.log();
 
 // What was the diet of a velociraptor?
-console.log();
+// console.log();
 
 // How long was a stegosaurus?
-console.log();
+// console.log();
 
 // What time period did tyrannosaurus live in?
-console.log();
+// console.log();
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+// console.log();
 
 
 // ==== Arrays ====
@@ -49,8 +124,14 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
+// const universities = [];
+// console.log(universities)
+
 const universities = [];
-console.log(universities)
+for (let i = 0; i < graduates.length; i++) {
+  universities.push(graduates[i].university);
+};
+console.log(universities.sort());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -58,13 +139,28 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
+// const contactInfo = [];
+// console.log(contactInfo);
+
 const contactInfo = [];
+for (let i = 0; i < graduates.length; i++) {
+  contactInfo.push(graduates[i].first_name + ' '+ graduates[i].email);
+};
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
 console.log(uni);
+
+
+const universities = [];
+for (let i = 0; i < graduates.length; i++) {
+  universities.push(graduates[i].university);
+  if(graduates[i].university.includes('Uni')){
+    console.log(graduates[i].university);
+  }
+};
 
 
 // ==== ADVANCED Array Methods ====
