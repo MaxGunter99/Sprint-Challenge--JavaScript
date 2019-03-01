@@ -31,54 +31,59 @@
 // console.log(cuboid.surfaceArea()); // 130
 
 //BASECONSTRUCTOR
-class CuboidMaker {
-  constructor(add) {
-    this.length = add.length;
-    this.width = add.width;
-    this.height = add.height;
-  }
-  //METHODS
-  volume() {
-    return ( this.length * this.width * this.height);
-  }
-    surfaceArea() {
-    return( 2 * (this.length * this.width + this.length * this.height + this.width * this.height));
-  }
+function CuboidMaker (add) {
+  this.length = add.length;
+  this.width = add.width;
+  this.height = add.height;
+};
+//METHODS
+CuboidMaker.prototype = Object.create(CuboidMaker.prototype)
+CuboidMaker.prototype.volume = function() {
+  return ( this.length * this.width * this.height);
 }
 
-class CuboidMaker2 extends CuboidMaker{
-  constructor(math) {
-    super(math)
-  }
-    //METHODS
-  volume() {
-    return ( this.length * this.width * this.height);
-  }
-    surfaceArea() {
-    return( 2 * (this.length * this.width + this.length * this.height + this.width * this.height));
-  }
+CuboidMaker.prototype = Object.create(CuboidMaker.prototype)
+CuboidMaker.prototype.surfaceArea = function() {
+  return( 2 * (this.length * this.width + this.length * this.height + this.width * this.height));
+}
+  
+function CuboidMaker2 (math) {
+  this.length = math.length;
+  this.width = math.width;
+  this.height = math.height;
 }
 
-//CUBOID OBJECT
-const cuboid = new CuboidMaker ({
-  length: 4,
-  width: 5,
-  height: 5
-});
+CuboidMaker2.prototype = Object.create(CuboidMaker2.prototype)
+CuboidMaker2.prototype.volume = function() {
+  return ( this.length * this.width * this.height);
+}
 
-const cuboid2 = new CuboidMaker2 ({
-  length: 4,
-  width: 5,
-  height: 5
-});
-
-console.log("The Volume of this Cuboid is:");
-console.log(cuboid.volume());
-console.log("The Suface Area of this Cuboid is:")
-console.log(cuboid.surfaceArea());
-console.log("The Volume of this Cuboid 2 is:");
-console.log(cuboid2.volume());
-console.log("The Suface Area of this Cuboid 2 is:")
-console.log(cuboid2.surfaceArea());
+CuboidMaker2.prototype = Object.create(CuboidMaker2.prototype)
+CuboidMaker2.prototype.surfaceArea = function() {
+  return( 2 * (this.length * this.width + this.length * this.height + this.width * this.height));
+}
+      //METHOD
+  
+  //CUBOID OBJECT
+  const cuboid = new CuboidMaker ({
+    length: 4,
+    width: 5,
+    height: 5
+  });
+  
+  const cuboid2 = new CuboidMaker2 ({
+    length: 4,
+    width: 5,
+    height: 5
+  });
+  
+  console.log("The Volume of this Cuboid is:");
+  console.log(cuboid.volume());
+  console.log("The Suface Area of this Cuboid is:")
+  console.log(cuboid.surfaceArea());
+  console.log("The Volume of this Cuboid 2 is:");
+  console.log(cuboid2.volume());
+  console.log("The Suface Area of this Cuboid 2 is:")
+  console.log(cuboid2.surfaceArea());
 
 
