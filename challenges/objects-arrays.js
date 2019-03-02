@@ -187,11 +187,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 // const animalNames = [];
 // console.log(animalNames);
 
-const animalNames = [];
-for (let i = 0; i < zooAnimals.length; i++) {
-  animalNames.push(zooAnimals[i].animal_name + ' '+ zooAnimals[i].scientific_name);
-};
-console.log(animalNames);
+zooAnimals.forEach(function(names) {
+  console.log(names.animal_name + ' ' + names.scientific_name);
+});
 
 /* Request 2: .map()    
 
@@ -202,11 +200,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 // const lowerCase = [];
 // console.log(lowerCase); 
 
-const lowerCase= [];
-for (let i = 0; i < zooAnimals.length; i++) {
-  console.log(zooAnimals[i].lowerCase.toString().toLowerCase());
-  
-};
+let lower = zooAnimals.map(function(names) {
+  return names.animal_name.toLowerCase();
+});
 
 /* Request 3: .filter() 
 
@@ -216,13 +212,12 @@ The zoos are concenred about animals with a lower population count. Find out whi
 // const largerPopulation = [];
 // console.log(largerPopulation);
 
-let largerPopulation = [];
-for (let i = 0; i < zooAnimals.length; i++) {
-  if(zooAnimals[i].population <= 5){
-        largerPopulation.push(zooAnimals[i]);
-    }
-}
-console.log(largerPopulation);
+let population = zooAnimals.filter(function(animal) {
+  if (animal.population <= 5) {
+    return animal;
+  }
+  
+});
 
 /* Request 4: .reduce() 
 
@@ -231,15 +226,15 @@ The zoos need to know their total animal population across the United States.  F
 */
 // const populationTotal = 0;
 // console.log(populationTotal);
-let populationTotal = 0;
-  for (let i = 0; i < zooAnimals.length; i++) {
-  populationTotal += zooAnimals[i].population;
-}
-console.log(populationTotal);
+
+let add = zooAnimals.reduce(function(total, animal){
+  return total + animal.population;
+}, 0);
+
+console.log(add);
 
 /* 
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
